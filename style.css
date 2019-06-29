@@ -1,0 +1,57 @@
+[quik-cloak] { display: none }
+
+.quikFilterTrack, #quikSubmit, .quikFacet {
+    background: #3fa2f7;
+    padding: .75em 2em;
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 1.05em;
+    margin: .5em 0;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.quikFilterTrack::before {
+    content: 'x';
+    margin-right: 1em;
+}
+
+#quikInput {
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #f8f8f8;
+}
+
+body {
+    margin: 0;
+    padding: 0 .5em;
+}
+
+.wrapper {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    background: #f8f8f8;
+    padding: 1em;
+    margin: 1em 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Calibri;
+}
+
+h2 { margin: 0 }
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.search-wrapper input {
+    width: 100%;
+    margin-right: .5em
+}

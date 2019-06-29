@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="search-wrapper">
+        <input type="text" id="quikInput">
+        <button type="button" id="quikSubmit">search</button>
+    </div>
+
+    <button type="button" class="quikFacet" data-facet="sortBy" data-value="title">title</button>
+    <button type="button" class="quikFacet" data-facet="sortBy" data-value="date">date</button>
+
+    <div class="filters">
+        <div class="filter">
+            <label for="NorthAmerica">North America</label>
+            <input id="NorthAmerica" type="checkbox" class="quikFilter" data-filter="Country" data-value="NorthAmerica">
+        </div>        
+        <div class="filter">
+            <label for="Africa">Africa</label>
+            <input id="Africa" type="checkbox" class="quikFilter" data-filter="Country" data-value="Africa">
+        </div>
+    </div>
+
+    <div class="quikPagination"></div>
+    
+    <select class="quikPaginator">
+        <option data-facet="pageSize" data-value="10">10</option>
+        <option data-facet="pageSize" data-value="15">15</option>
+        <option data-facet="pageSize" data-value="20">20</option>
+    </select>
+
+    <div id="quikFilterTracking"></div>
+
+    <div id="quikSearch">
+        <ul class="wrapper">
+            <li data-quikFor="item in data" class="card" data-quikTemplate>
+                <h2>{{ item.name }}</h2>
+                <a href="mailto:{{ item.email }}">{{ item.email }}</a>
+                <div>{{ item.website }}</div>
+                <a href="tel: {{ item.phone }}">{{ item.phone }}</a>
+                <p>The Street is {{ item.address.street }}</p>
+
+                <div data-quikFor="company in item.company">
+                    {{ company }}
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <button type="button" id="quikMore">Load More</button>
+    <script src="quikSearch.js"></script>
+    <script>
+        document.querySelector('#quikMore').addEventListener('click', function() {
+            var parent = document.querySelector('.wrapper');
+            quikSearch.loadMore(parent);
+        });
+    </script>
+</body>
+</html>
